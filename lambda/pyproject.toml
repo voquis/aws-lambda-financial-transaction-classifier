@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "example"
+name = "financial_transaction_classifier"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "Financial transaction classifier"
+authors = ["Voquis"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

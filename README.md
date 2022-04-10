@@ -1,29 +1,5 @@
-# AWS Lambda function python template
-Opinionated starter repository for creating python Lambda functions that use AWS services.
-
-## Assumptions
-This starter repository makes the following assumptions.
-
-### Dependency management
-- Poetry is used to manage dependencies and run tasks
-
-This project was initiated with:
-```shell
-poetry new example --src
-```
-
-### Development environment
-- A shell-capable environment is available
-- Docker is used as the local development environment
-
-### Testing
-- pytest is used to run tests with coverage via GitHub Actions
-
-### Build
-- GitHub Actions are used to test and produce build artifacts
-- A zip bundle is created
-- A wheel package is created
-
+# Financial transaction classifier Lambda function
+Financial transaction classifier designed to run as a Python AWS Lambda Function.
 ## Local development
 ### Docker
 Developing inside a Docker container ensures a consistent experience and more closely matches the final build.
@@ -33,7 +9,7 @@ Note that will run tests and produce builds.
 The `dev` target uses the first stage of the multi-stage [Dockerfile](./Dockerfile).
 
 ```shell
-docker build -t python-lambda/template/dev --target dev .
+docker build -t python-lambda/financial-transaction-classifier/dev --target dev .
 ```
 
 To then develop inside a container using this image, mount the entire project into a container (in addition to the local AWS config directory) with:
@@ -42,7 +18,7 @@ To then develop inside a container using this image, mount the entire project in
 docker run -i -t --rm \
   -v $(pwd):/project \
   -v $HOME/.aws:/home/lambda/.aws:ro \
-  python-lambda/template/dev
+  python-lambda/financial-transaction-classifier/dev
 ```
 
 ### Run tests
@@ -63,14 +39,14 @@ Build a local image using this AWS image with the following.
 Note this uses the same Dockerfile as above without stage targeting.
 
 ```
-docker build -t python-lambda/template/lambda .
+docker build -t python-lambda/financial-transaction-classifier/lambda .
 ```
 
 Then start the Lambda function locally on arbitrary port `10111` with:
 ```
 docker run --rm \
   -p 10111:8080 \
-  python-lambda/template/lambda
+  python-lambda/financial-transaction-classifier/lambda
 ```
 
 Make a HTTP Post request to the lambda with:
