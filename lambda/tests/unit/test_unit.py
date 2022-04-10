@@ -1,9 +1,9 @@
 """
-Example unit tests
+Classifier unit tests
 """
 
-from example import __version__
-from example import example
+from financial_transaction_classifier import __version__
+from financial_transaction_classifier import classifier
 
 
 def test_version():
@@ -13,8 +13,8 @@ def test_version():
     assert __version__ == '0.1.0'
 
 
-def test_example_function():
+def test_classifier():
     """
-    Test example function
+    Test classify function
     """
-    assert example.example_function('a') == 'a'
+    assert classifier.classify('a') == 'a'

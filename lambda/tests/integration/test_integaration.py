@@ -2,7 +2,7 @@
 Example integration tests
 """
 
-from example import __version__
+from financial_transaction_classifier import __version__
 
 def test_version():
     """

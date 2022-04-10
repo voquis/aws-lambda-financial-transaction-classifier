@@ -4,7 +4,7 @@ Payload parsing unit tests
 
 import json
 import pathlib
-from example import payload
+from financial_transaction_classifier import payload
 
 json_data = {'key': 'test value'}
 urlencoded_data = {'key': ['test value']}
